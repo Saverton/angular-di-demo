@@ -8,7 +8,12 @@ import { CountBModule } from './count-b/count-b.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, AppRoutingModule, CountAModule, CountBModule],
+  imports: [
+    BrowserModule, 
+    AppRoutingModule, 
+    CountAModule, 
+    CountBModule
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
