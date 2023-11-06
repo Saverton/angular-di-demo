@@ -4,9 +4,14 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class CountService {
+  static classCount = 0;
+  instanceCount: number;
   #count: number = 0;
 
-  constructor() { }
+  constructor() {
+    this.instanceCount = CountService.classCount;
+    CountService.classCount++;
+  }
 
   get count() {
     return this.#count;

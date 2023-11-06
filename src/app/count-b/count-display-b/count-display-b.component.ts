@@ -13,6 +13,10 @@ export class CountDisplayBComponent {
     return this.countService.count;
   }
 
+  getInstance() {
+    return this.countService.instanceCount;
+  }
+
   onClickIncrement() {
     this.countService.increment();
   }
