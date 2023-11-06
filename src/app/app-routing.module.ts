@@ -1,15 +1,26 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CountDisplayAComponent } from './count-a/count-display-a/count-display-a.component';
-import { CountDisplayBComponent } from './count-b/count-display-b/count-display-b.component';
 
 const appRoutes: Routes = [
-  { path: 'counter-a', component: CountDisplayAComponent },
-  { path: 'counter-b', component: CountDisplayBComponent },
+  {
+    path: 'counter-a',
+    loadChildren: () =>
+      import('./count-a/count-a.module').then((m) => m.CountAModule),
+  },
+  {
+    path: 'counter-b',
+    loadChildren: () =>
+      import('./count-b/count-b.module').then((m) => m.CountBModule),
+  },
+  {
+    path: '',
+    redirectTo: 'counter-a',
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
