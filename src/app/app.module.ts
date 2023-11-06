@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CountService } from './services/count.service';
 
 @NgModule({
   declarations: [AppComponent],
@@ -10,7 +11,7 @@ import { AppComponent } from './app.component';
     BrowserModule, 
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CountService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

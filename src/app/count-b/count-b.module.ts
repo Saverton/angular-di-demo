@@ -15,6 +15,6 @@ const routes: Routes = [
   declarations: [CountDisplayBComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
   exports: [CountDisplayBComponent],
-  providers: [CountService],
+  // providers: [CountService],
 })
 export class CountBModule {}
